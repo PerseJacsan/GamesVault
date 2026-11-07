@@ -1,0 +1,59 @@
+# Python caches and test/tool output
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+secrets/
+credentials
+credentials.*
+*.token
+*.secret
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+
+# Local databases, journals, and backups
+*.db
+*.db-*
+*.db.lock
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite.lock
+*.wal
+*.shm
+backups/
+instance/*
+!instance/.gitkeep
+
+# Logs, temporary data, and generated packages
+*.log
+*.tmp
+*.bak
+tmp*/
+dist/
+build/
+coverage.xml
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo

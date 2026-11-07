@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101317">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>{{ 'Sign in' if mode == 'login' else 'Create account' }} · GamesVault</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css', v='20261106-card-redesign') }}">
+</head>
+<body class="auth-page" data-auth-mode="{{ mode }}">
+  <main class="auth-layout">
+    <section class="auth-intro" aria-label="GamesVault introduction">
+      <a class="brand auth-brand" href="/login" aria-label="GamesVault home">GAMES<span>VAULT</span></a>
+      <div class="auth-intro-copy">
+        <div class="eyebrow">YOUR PERSONAL GAME SPACE</div>
+        <h1>Your games.<br>Your story.</h1>
+        <p>Keep your collection close and your next adventure in sight.</p>
+        <div class="auth-orbit" aria-hidden="true"><span>PLAY</span><span>TRACK</span><span>DISCOVER</span></div>
+      </div>
+      <p class="auth-footer">A home for every kind of player.</p>
+    </section>
+    <section class="auth-form-side">
+      <div class="auth-panel panel">
+        <div class="auth-mobile-brand brand">GAMES<span>VAULT</span></div>
+        <div class="eyebrow">{{ 'WELCOME BACK' if mode == 'login' else 'START YOUR COLLECTION' }}</div>
+        <h2>{{ 'Sign in to GamesVault' if mode == 'login' else 'Create your account' }}</h2>
+        <p class="muted">{{ 'Pick up where your gaming story left off.' if mode == 'login' else 'One account for your library, wishlist and gaming plans.' }}</p>
+        <div id="auth-message" class="auth-error" role="alert" hidden></div>
+        <form id="auth-form" novalidate>
+          {% if mode == 'register' %}
+          <label for="name">Display name<input id="name" name="name" required minlength="2" maxlength="60" autocomplete="name" placeholder="How should we call you?"></label>
+          <label for="username">Username<input id="username" name="username" required minlength="3" maxlength="24" pattern="[A-Za-z0-9_.-]+" autocomplete="username" placeholder="Choose a username"><small>3–24 letters, numbers, dots, underscores or hyphens.</small></label>
+          <label for="email">Email address<input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+          <label for="password">Password<input id="password" name="password" type="password" required minlength="12" autocomplete="new-password" placeholder="At least 12 characters"></label>
+          <label for="confirm-password">Confirm password<input id="confirm-password" name="confirm_password" type="password" required minlength="12" autocomplete="new-password" placeholder="Enter your password again"></label>
+          {% else %}
+          <label for="identity">Username or email<input id="identity" name="identity" required autocomplete="username" placeholder="Enter your username or email"></label>
+          <label for="password">Password<input id="password" name="password" type="password" required autocomplete="current-password" placeholder="Enter your password"></label>
+          {% endif %}
+          <button class="btn auth-submit" id="auth-submit" type="submit">{{ 'Sign in' if mode == 'login' else 'Create account' }}</button>
+        </form>
+        {% if mode == 'register' or allow_registration %}<p class="muted auth-switch">{{ "New to GamesVault?" if mode == 'login' else 'Already have an account?' }}
+          <a href="{{ '/register' if mode == 'login' else '/login' }}">{{ 'Create an account' if mode == 'login' else 'Sign in' }}</a>
+        </p>{% endif %}
+      </div>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='js/auth.js') }}" defer></script>
+</body>
+</html>

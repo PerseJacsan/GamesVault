@@ -1,0 +1,11 @@
+{
+  "intro": "Find GamesVault project and developer links here.",
+  "links": [
+    { "name": "GitHub profile", "url": "", "description": "Developer profile", "icon": "github" },
+    { "name": "GitHub repository", "url": "", "description": "GamesVault source code", "icon": "repository" },
+    { "name": "LinkedIn", "url": "", "description": "Professional profile", "icon": "linkedin" },
+    { "name": "Portfolio", "url": "", "description": "Personal website", "icon": "portfolio" },
+    { "name": "Email", "email": "", "description": "Contact the developer", "icon": "email" },
+    { "name": "Other link", "url": "", "description": "Additional project link", "icon": "link" }
+  ]
+}

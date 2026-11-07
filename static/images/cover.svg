@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" role="img" aria-labelledby="title">
+  <title id="title">GamesVault artwork unavailable</title>
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#171d28"/><stop offset=".53" stop-color="#0b0f15"/><stop offset="1" stop-color="#202b1d"/>
+    </linearGradient>
+    <radialGradient id="light" cx=".76" cy=".29" r=".68">
+      <stop stop-color="#bbff45" stop-opacity=".31"/><stop offset="1" stop-color="#bbff45" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#fff" stroke-opacity=".055" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <path fill="url(#base)" d="M0 0h600v900H0z"/>
+  <path fill="url(#light)" d="M0 0h600v900H0z"/>
+  <path fill="url(#grid)" d="M0 0h600v900H0z"/>
+  <path fill="#c2ff4d" fill-opacity=".11" d="M600 0v437L224 900H0v-83L490 0z"/>
+  <path fill="none" stroke="#c2ff4d" stroke-opacity=".35" stroke-width="2" d="M-40 692 462 90M80 900 600 270"/>
+  <path fill="#0b0f15" fill-opacity=".76" d="M0 622 600 501v399H0z"/>
+  <path fill="none" stroke="#c2ff4d" stroke-opacity=".55" stroke-width="4" d="M62 666h70m-35-35v70"/>
+  <text x="58" y="772" fill="#c2ff4d" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="5">GAMESVAULT</text>
+  <text x="55" y="847" fill="#f3f5f7" fill-opacity=".9" font-family="Segoe UI,Arial,sans-serif" font-size="61" font-weight="800" letter-spacing="-5">ARTWORK</text>
+  <text x="60" y="875" fill="#a3adbb" font-family="Segoe UI,Arial,sans-serif" font-size="12" letter-spacing="3">TEMPORARILY OFFLINE</text>
+</svg>
