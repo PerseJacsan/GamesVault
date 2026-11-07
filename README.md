@@ -21,7 +21,7 @@
 
 ---
 
-## ✨ What is GamesVault?
+## What is GamesVault?
 
 GamesVault gives you one place to browse a game catalogue and manage your personal gaming library. Track what you're playing, what you've finished, and what you want to play next, while keeping account and library data in a local SQLite database.
 
@@ -42,7 +42,7 @@ It is designed as a **local-first application**: you run it on your own machine,
 
 **Friends page note:** the Friends page currently displays static sample profiles. It is not a live social network and does not implement friend accounts or a friend API.
 
-## 🧰 Tech stack
+## Tech stack
 
 - **Backend:** Python 3.10+, Flask 3.x
 - **Database:** SQLite
@@ -51,11 +51,11 @@ It is designed as a **local-first application**: you run it on your own machine,
 - **Configuration:** python-dotenv
 - **Optional production WSGI server:** Gunicorn
 
-## 🖥️ Screenshots
+## Screenshots
 
 Screenshots are not included in the repository yet. The section can be expanded with real application captures once they are added.
 
-## 📦 Getting started
+## Getting started
 
 ### Requirements
 
@@ -126,7 +126,7 @@ Open **http://127.0.0.1:5000** in your browser.
 
 On first launch, GamesVault creates its SQLite database and initializes the schema. A fresh checkout uses `instance/gamesvault.db`.
 
-## 🗃️ Database and local data
+## Database and local data
 
 - If a legacy `gamesvault.db` file exists beside the source, GamesVault continues using it to preserve existing data.
 - A fresh checkout without that file defaults to `instance/gamesvault.db`.
@@ -145,7 +145,7 @@ python -c "from config import DB_PATH; from scripts.db_tools import verify_datab
 
 You can override the database location by setting `GAMESVAULT_DB_PATH` in `.env`.
 
-## 🎮 Optional Steam catalogue synchronization
+## Optional Steam catalogue synchronization
 
 Steam synchronization is optional. The application works without a Steam API key.
 
@@ -161,7 +161,7 @@ STEAM_DETAIL_BATCH_SIZE=50
 
 The sync is an explicit user action; it is not required for ordinary local library features.
 
-## ⚙️ Configuration
+## Configuration
 
 GamesVault reads settings from environment variables or the local `.env` file.
 
@@ -180,7 +180,7 @@ GamesVault reads settings from environment variables or the local `.env` file.
 
 For production mode, set a random `SECRET_KEY` of at least 32 characters. Production mode also disables debug mode and requires secure session cookies.
 
-## 🧪 Run the tests
+## Run the tests
 
 From the project root:
 
@@ -190,7 +190,7 @@ python -m unittest discover -s tests
 
 The tests use temporary database copies and fixtures. They do not require cloud services or Steam credentials.
 
-## 🗂️ Project structure
+## Project structure
 
 ```text
 GamesVault/
@@ -216,7 +216,7 @@ GamesVault/
 └── requirements-production.txt
 ```
 
-## 🔐 Security and deployment notes
+## Security and deployment notes
 
 - Passwords are stored as Werkzeug password hashes.
 - Personal library APIs require an authenticated session; state-changing requests use CSRF protection.
@@ -228,7 +228,7 @@ GamesVault/
 
 See [SECURITY_REVIEW.md](SECURITY_REVIEW.md) for the safeguards and operational boundaries documented in this repository.
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 - **Python command not found:** install Python 3.10+ and use `py` on Windows.
 - **PowerShell blocks activation:** use `.venv\Scripts\activate.bat` from Command Prompt, or adjust the execution policy only if appropriate for your machine.
@@ -236,13 +236,13 @@ See [SECURITY_REVIEW.md](SECURITY_REVIEW.md) for the safeguards and operational 
 - **Database integrity issue:** stop the application, preserve a copy of the database, then run the database verification tool before attempting recovery.
 - **Steam refresh fails:** local catalogue browsing and library features remain available; check connectivity and retry the explicit refresh later.
 
-## 🧭 Roadmap
+## Roadmap
 
 - [ ] Add real application screenshots and a short walkthrough
 - [ ] Expand automated browser/UI coverage
 - [ ] Introduce a formal migration-version strategy if schema complexity grows
 
-## 📄 License
+## License
 
 No license has been selected yet. Until a license is added, normal copyright applies and reuse is not granted by this README.
 
